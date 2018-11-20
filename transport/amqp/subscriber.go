@@ -86,12 +86,13 @@ func ServerFinalizer(f ...SubscriberFinalizerFunc) SubscriberOption {
 func (s Subscriber) ServeDelivery(ch Channel) func(deliv *amqp.Delivery) {
 	return func(deliv *amqp.Delivery) {
 		ctx, cancel := context.WithCancel(context.Background())
+		var err error
 		defer cancel()
 
 		if len(s.finalizer) > 0 {
 			defer func() {
 				for _, f := range s.finalizer {
-					f(ctx,)
+					f(ctx, err)
 				}
 			}()
 		}
@@ -120,13 +121,13 @@ func (s Subscriber) ServeDelivery(ch Channel) func(deliv *amqp.Delivery) {
 			ctx = f(ctx, deliv, ch, &pub)
 		}
 
-		if err := s.enc(ctx, &pub, response); err != nil {
+		if err = s.enc(ctx, &pub, response); err != nil {
 			s.logger.Log("err", err)
 			s.errorEncoder(ctx, err, deliv, ch, &pub)
 			return
 		}
 
-		if err := s.publishResponse(ctx, deliv, ch, &pub); err != nil {
+		if err = s.publishResponse(ctx, deliv, ch, &pub); err != nil {
 			s.logger.Log("err", err)
 			s.errorEncoder(ctx, err, deliv, ch, &pub)
 			return
@@ -265,7 +266,7 @@ type DefaultErrorResponse struct {
 // intended use is for request logging. In addition to the response code
 // provided in the function signature, additional response parameters are
 // provided in the context under keys with the ContextKeyResponse prefix.
-type SubscriberFinalizerFunc func(ctx context.Context)
+type SubscriberFinalizerFunc func(ctx context.Context, err error)
 
 // Channel is a channel interface to make testing possible.
 // It is highly recommended to use *amqp.Channel as the interface implementation.
