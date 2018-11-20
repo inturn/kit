@@ -13,8 +13,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/go-kit/kit/log"
-	httptransport "github.com/go-kit/kit/transport/http"
+	"github.com/inturn/kit/log"
+	httptransport "github.com/inturn/kit/transport/http"
 )
 
 var (

@@ -4,9 +4,9 @@ package inmem
 import (
 	"sync"
 
-	"github.com/go-kit/kit/examples/shipping/cargo"
-	"github.com/go-kit/kit/examples/shipping/location"
-	"github.com/go-kit/kit/examples/shipping/voyage"
+	"github.com/inturn/kit/examples/shipping/cargo"
+	"github.com/inturn/kit/examples/shipping/location"
+	"github.com/inturn/kit/examples/shipping/voyage"
 )
 
 type cargoRepository struct {

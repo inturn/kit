@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/go-kit/kit/endpoint"
+	"github.com/inturn/kit/endpoint"
 )
 
 func ExampleChain() {

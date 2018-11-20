@@ -6,9 +6,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/go-kit/kit/examples/shipping/cargo"
-	"github.com/go-kit/kit/examples/shipping/location"
-	"github.com/go-kit/kit/examples/shipping/routing"
+	"github.com/inturn/kit/examples/shipping/cargo"
+	"github.com/inturn/kit/examples/shipping/location"
+	"github.com/inturn/kit/examples/shipping/routing"
 )
 
 // ErrInvalidArgument is returned when one or more arguments are invalid.

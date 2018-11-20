@@ -10,9 +10,9 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"github.com/aws/aws-sdk-go/service/cloudwatch/cloudwatchiface"
 
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/metrics"
-	"github.com/go-kit/kit/metrics/teststat"
+	"github.com/inturn/kit/log"
+	"github.com/inturn/kit/metrics"
+	"github.com/inturn/kit/metrics/teststat"
 )
 
 type mockCloudWatch struct {

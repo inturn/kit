@@ -6,7 +6,7 @@ import (
 	"github.com/opentracing/opentracing-go"
 	otext "github.com/opentracing/opentracing-go/ext"
 
-	"github.com/go-kit/kit/endpoint"
+	"github.com/inturn/kit/endpoint"
 )
 
 // TraceServer returns a Middleware that wraps the `next` Endpoint in an

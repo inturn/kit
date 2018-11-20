@@ -5,9 +5,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/sd"
-	"github.com/go-kit/kit/sd/internal/instance"
+	"github.com/inturn/kit/log"
+	"github.com/inturn/kit/sd"
+	"github.com/inturn/kit/sd/internal/instance"
 )
 
 // Instancer yields instances from the named DNS SRV record. The name is

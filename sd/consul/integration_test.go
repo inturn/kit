@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kit/kit/endpoint"
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/sd"
+	"github.com/inturn/kit/endpoint"
+	"github.com/inturn/kit/log"
+	"github.com/inturn/kit/sd"
 	stdconsul "github.com/hashicorp/consul/api"
 )
 

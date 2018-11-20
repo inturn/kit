@@ -17,16 +17,16 @@ import (
 	stdzipkin "github.com/openzipkin/zipkin-go"
 	"github.com/sony/gobreaker"
 
-	"github.com/go-kit/kit/circuitbreaker"
-	"github.com/go-kit/kit/endpoint"
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/ratelimit"
-	"github.com/go-kit/kit/tracing/opentracing"
-	"github.com/go-kit/kit/tracing/zipkin"
-	httptransport "github.com/go-kit/kit/transport/http"
+	"github.com/inturn/kit/circuitbreaker"
+	"github.com/inturn/kit/endpoint"
+	"github.com/inturn/kit/log"
+	"github.com/inturn/kit/ratelimit"
+	"github.com/inturn/kit/tracing/opentracing"
+	"github.com/inturn/kit/tracing/zipkin"
+	httptransport "github.com/inturn/kit/transport/http"
 
-	"github.com/go-kit/kit/examples/addsvc/pkg/addendpoint"
-	"github.com/go-kit/kit/examples/addsvc/pkg/addservice"
+	"github.com/inturn/kit/examples/addsvc/pkg/addendpoint"
+	"github.com/inturn/kit/examples/addsvc/pkg/addservice"
 )
 
 // NewHTTPHandler returns an HTTP handler that makes a set of endpoints

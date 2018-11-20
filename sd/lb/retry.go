@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-kit/kit/endpoint"
+	"github.com/inturn/kit/endpoint"
 )
 
 // RetryError is an error wrapper that is used by the retry mechanism. All

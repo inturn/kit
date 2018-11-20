@@ -46,7 +46,7 @@ go get github.com/nyarly/inlinefiles
 ```
 2. **Install** the binary for easy access to `kitgen`. Run the following commands:
 ```sh
-cd $GOPATH/src/github.com/go-kit/kit/cmd/kitgen
+cd $GOPATH/src/github.com/inturn/kit/cmd/kitgen
 go install
 
 # Check installation by running:

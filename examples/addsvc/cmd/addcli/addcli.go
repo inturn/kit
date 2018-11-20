@@ -20,11 +20,11 @@ import (
 	"sourcegraph.com/sourcegraph/appdash"
 	appdashot "sourcegraph.com/sourcegraph/appdash/opentracing"
 
-	"github.com/go-kit/kit/log"
+	"github.com/inturn/kit/log"
 
-	"github.com/go-kit/kit/examples/addsvc/pkg/addservice"
-	"github.com/go-kit/kit/examples/addsvc/pkg/addtransport"
-	addthrift "github.com/go-kit/kit/examples/addsvc/thrift/gen-go/addsvc"
+	"github.com/inturn/kit/examples/addsvc/pkg/addservice"
+	"github.com/inturn/kit/examples/addsvc/pkg/addtransport"
+	addthrift "github.com/inturn/kit/examples/addsvc/thrift/gen-go/addsvc"
 )
 
 func main() {

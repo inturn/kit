@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/go-kit/kit/endpoint"
-	"github.com/go-kit/kit/log"
+	"github.com/inturn/kit/endpoint"
+	"github.com/inturn/kit/log"
 	"github.com/streadway/amqp"
 )
 
@@ -17,6 +17,7 @@ type Subscriber struct {
 	enc          EncodeResponseFunc
 	before       []RequestFunc
 	after        []SubscriberResponseFunc
+	finalizer    []SubscriberFinalizerFunc
 	errorEncoder ErrorEncoder
 	logger       log.Logger
 }
@@ -73,6 +74,12 @@ func SubscriberErrorLogger(logger log.Logger) SubscriberOption {
 	return func(s *Subscriber) { s.logger = logger }
 }
 
+// ServerFinalizer is executed at the end of every MQ request.
+// By default, no finalizer is registered.
+func ServerFinalizer(f ...SubscriberFinalizerFunc) SubscriberOption {
+	return func(s *Subscriber) { s.finalizer = append(s.finalizer, f...) }
+}
+
 // ServeDelivery handles AMQP Delivery messages
 // It is strongly recommended to use *amqp.Channel as the
 // Channel interface implementation.
@@ -81,10 +88,18 @@ func (s Subscriber) ServeDelivery(ch Channel) func(deliv *amqp.Delivery) {
 		ctx, cancel := context.WithCancel(context.Background())
 		defer cancel()
 
+		if len(s.finalizer) > 0 {
+			defer func() {
+				for _, f := range s.finalizer {
+					f(ctx,)
+				}
+			}()
+		}
+
 		pub := amqp.Publishing{}
 
 		for _, f := range s.before {
-			ctx = f(ctx, &pub)
+			ctx = f(ctx, &pub, deliv)
 		}
 
 		request, err := s.dec(ctx, deliv)
@@ -244,6 +259,13 @@ func ReplyAndAckErrorEncoder(ctx context.Context, err error, deliv *amqp.Deliver
 type DefaultErrorResponse struct {
 	Error string `json:"err"`
 }
+
+// ServerFinalizerFunc can be used to perform work at the end of an MQ
+// request, after the response has been written to the client. The principal
+// intended use is for request logging. In addition to the response code
+// provided in the function signature, additional response parameters are
+// provided in the context under keys with the ContextKeyResponse prefix.
+type SubscriberFinalizerFunc func(ctx context.Context)
 
 // Channel is a channel interface to make testing possible.
 // It is highly recommended to use *amqp.Channel as the interface implementation.

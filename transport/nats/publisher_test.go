@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	natstransport "github.com/go-kit/kit/transport/nats"
+	natstransport "github.com/inturn/kit/transport/nats"
 	"github.com/nats-io/go-nats"
 )
 

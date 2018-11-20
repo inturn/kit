@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/go-kit/kit/endpoint"
+	"github.com/inturn/kit/endpoint"
 	"github.com/streadway/amqp"
 )
 
@@ -82,7 +82,7 @@ func (p Publisher) Endpoint() endpoint.Endpoint {
 		}
 
 		for _, f := range p.before {
-			ctx = f(ctx, &pub)
+			ctx = f(ctx, &pub, nil)
 		}
 
 		deliv, err := p.publishAndConsumeFirstMatchingResponse(ctx, &pub)

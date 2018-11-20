@@ -2,9 +2,9 @@ package endpoints
 
 import "context"
 
-import "github.com/go-kit/kit/endpoint"
+import "github.com/inturn/kit/endpoint"
 
-import "github.com/go-kit/kit/cmd/kitgen/testdata/stringservice/default/service"
+import "github.com/inturn/kit/cmd/kitgen/testdata/stringservice/default/service"
 
 type ConcatRequest struct {
 	A string

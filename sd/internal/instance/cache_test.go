@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kit/kit/sd"
+	"github.com/inturn/kit/sd"
 )
 
 var _ sd.Instancer = (*Cache)(nil) // API check

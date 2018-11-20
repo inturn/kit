@@ -1,6 +1,6 @@
 package zipkin
 
-import "github.com/go-kit/kit/log"
+import "github.com/inturn/kit/log"
 
 // TracerOption allows for functional options to our Zipkin tracing middleware.
 type TracerOption func(o *tracerOptions)

@@ -6,8 +6,8 @@ import (
 
 	"go.opencensus.io/trace"
 
-	"github.com/go-kit/kit/endpoint"
-	"github.com/go-kit/kit/sd/lb"
+	"github.com/inturn/kit/endpoint"
+	"github.com/inturn/kit/sd/lb"
 )
 
 // TraceEndpointDefaultName is the default endpoint span name to use.

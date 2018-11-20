@@ -3,7 +3,7 @@ package tracking
 import (
 	"time"
 
-	"github.com/go-kit/kit/log"
+	"github.com/inturn/kit/log"
 )
 
 type loggingService struct {

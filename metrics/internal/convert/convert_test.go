@@ -3,8 +3,8 @@ package convert
 import (
 	"testing"
 
-	"github.com/go-kit/kit/metrics/generic"
-	"github.com/go-kit/kit/metrics/teststat"
+	"github.com/inturn/kit/metrics/generic"
+	"github.com/inturn/kit/metrics/teststat"
 )
 
 func TestCounterHistogramConversion(t *testing.T) {

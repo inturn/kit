@@ -12,10 +12,10 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatch/cloudwatchiface"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/metrics"
-	"github.com/go-kit/kit/metrics/internal/convert"
-	"github.com/go-kit/kit/metrics/internal/lv"
+	"github.com/inturn/kit/log"
+	"github.com/inturn/kit/metrics"
+	"github.com/inturn/kit/metrics/internal/convert"
+	"github.com/inturn/kit/metrics/internal/lv"
 )
 
 const (
