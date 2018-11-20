@@ -1,12 +1,12 @@
 # kitgen
 kitgen is an experimental code generation utility that helps with some of the
-boilerplate code required to implement the "onion" pattern `go-kit` utilizes.
+boilerplate code required to implement the "onion" pattern `inturn` utilizes.
 
 ## Usage
 Before using this tool please explore the [testdata]() directory for examples
 of the inputs it requires and the outputs that will be produced. _You may not
-need this tool._ If you are new to and just learning `go-kit` or if your use
-case involves introducing `go-kit` to an existing codebase you are better
+need this tool._ If you are new to and just learning `inturn` or if your use
+case involves introducing `inturn` to an existing codebase you are better
 suited by slowly building out the "onion" by hand.
 
 Before starting you need to *install* `kitgen` utility — see instructions below.

@@ -19,7 +19,7 @@ type AuthError struct {
 	Realm string
 }
 
-// StatusCode is an implementation of the StatusCoder interface in go-kit/http.
+// StatusCode is an implementation of the StatusCoder interface in inturn/http.
 func (AuthError) StatusCode() int {
 	return http.StatusUnauthorized
 }
@@ -29,7 +29,7 @@ func (AuthError) Error() string {
 	return http.StatusText(http.StatusUnauthorized)
 }
 
-// Headers is an implementation of the Headerer interface in go-kit/http.
+// Headers is an implementation of the Headerer interface in inturn/http.
 func (e AuthError) Headers() http.Header {
 	return http.Header{
 		"Content-Type":           []string{"text/plain; charset=utf-8"},

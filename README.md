@@ -1,4 +1,4 @@
-# Go kit [![Circle CI](https://circleci.com/gh/go-kit/kit.svg?style=shield)](https://circleci.com/gh/go-kit/kit) [![Travis CI](https://travis-ci.org/go-kit/kit.svg?branch=master)](https://travis-ci.org/go-kit/kit) [![GoDoc](https://godoc.org/github.com/inturn/kit?status.svg)](https://godoc.org/github.com/inturn/kit) [![Coverage Status](https://coveralls.io/repos/go-kit/kit/badge.svg?branch=master&service=github)](https://coveralls.io/github/go-kit/kit?branch=master) [![Go Report Card](https://goreportcard.com/badge/go-kit/kit)](https://goreportcard.com/report/go-kit/kit) [![Sourcegraph](https://sourcegraph.com/github.com/inturn/kit/-/badge.svg)](https://sourcegraph.com/github.com/inturn/kit?badge)
+# Go kit [![Circle CI](https://circleci.com/gh/inturn/kit.svg?style=shield)](https://circleci.com/gh/inturn/kit) [![Travis CI](https://travis-ci.org/inturn/kit.svg?branch=master)](https://travis-ci.org/inturn/kit) [![GoDoc](https://godoc.org/github.com/inturn/kit?status.svg)](https://godoc.org/github.com/inturn/kit) [![Coverage Status](https://coveralls.io/repos/inturn/kit/badge.svg?branch=master&service=github)](https://coveralls.io/github/inturn/kit?branch=master) [![Go Report Card](https://goreportcard.com/badge/inturn/kit)](https://goreportcard.com/report/inturn/kit) [![Sourcegraph](https://sourcegraph.com/github.com/inturn/kit/-/badge.svg)](https://sourcegraph.com/github.com/inturn/kit?badge)
 
 **Go kit** is a **programming toolkit** for building microservices
 (or elegant monoliths) in Go. We solve common problems in distributed
@@ -6,8 +6,8 @@ systems and application architecture so you can focus on delivering
 business value.
 
 - Website: [gokit.io](https://gokit.io)
-- Mailing list: [go-kit](https://groups.google.com/forum/#!forum/go-kit)
-- Slack: [gophers.slack.com](https://gophers.slack.com) **#go-kit** ([invite](https://gophersinvite.herokuapp.com/))
+- Mailing list: [inturn](https://groups.google.com/forum/#!forum/inturn)
+- Slack: [gophers.slack.com](https://gophers.slack.com) **#inturn** ([invite](https://gophersinvite.herokuapp.com/))
 
 ## Motivation
 
@@ -25,14 +25,14 @@ organizations of any size.
 
 For more details, see
  [the website](https://gokit.io),
- [the motivating blog post](http://peter.bourgon.org/go-kit/) and
+ [the motivating blog post](http://peter.bourgon.org/inturn/) and
  [the video of the talk](https://www.youtube.com/watch?v=iFR_7AKkJFU).
 See also the
  [Go kit talk at GopherCon 2015](https://www.youtube.com/watch?v=1AjaZi4QuGo).
 
 ## Goals
 
-- Operate in a heterogeneous SOA — expect to interact with mostly non-Go-kit services
+- Operate in a heterogeneous SOA — expect to interact with mostly non-inturn services
 - RPC as the primary messaging pattern
 - Pluggable serialization and transport — not just JSON over HTTP
 - Operate within existing infrastructures — no mandates for specific tools or technologies

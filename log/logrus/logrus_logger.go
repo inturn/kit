@@ -1,5 +1,5 @@
 // Package logrus provides an adapter to the
-// go-kit log.Logger interface.
+// inturn log.Logger interface.
 package logrus
 
 import (
@@ -16,7 +16,7 @@ type logrusLogger struct {
 
 var errMissingValue = errors.New("(MISSING)")
 
-// NewLogrusLogger returns a go-kit log.Logger that sends log events to a Logrus logger.
+// NewLogrusLogger returns a inturn log.Logger that sends log events to a Logrus logger.
 func NewLogrusLogger(logger logrus.FieldLogger) log.Logger {
 	return &logrusLogger{logger}
 }
